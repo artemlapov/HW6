@@ -18,8 +18,5 @@ final class LogInDoneViewController: UIViewController {
         welcomeMessageLabel.text = "Welcome, \(userNameTextField ?? "") 🥹"
     }
 
-    @IBAction func logOutButton() {
-    }
-
 
 }
