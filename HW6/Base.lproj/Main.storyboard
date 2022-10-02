@@ -35,6 +35,9 @@
                                         <buttonConfiguration key="configuration" style="plain" title="Log In">
                                             <fontDescription key="titleFontDescription" type="system" pointSize="27"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <segue destination="vuf-3l-KVz" kind="presentation" modalPresentationStyle="fullScreen" id="Oaf-fJ-hwp"/>
+                                        </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="70h-cc-aTG">
                                         <rect key="frame" x="0.0" y="183.33333333333331" width="313" height="29.666666666666657"/>
@@ -97,8 +100,53 @@
             </objects>
             <point key="canvasLocation" x="70.769230769230774" y="3.5545023696682461"/>
         </scene>
+        <!--Log In Done View Controller-->
+        <scene sceneID="YIF-12-No4">
+            <objects>
+                <viewController id="vuf-3l-KVz" customClass="LogInDoneViewController" customModule="HW6" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ff8-oW-2bd">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="soo-B7-Xb3">
+                                <rect key="frame" x="138" y="771" width="117.33333333333331" height="47"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="Log Out">
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="27"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="logOutButton" destination="vuf-3l-KVz" eventType="touchUpInside" id="c8p-AE-E6X"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome, ___ 🥹" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="45I-sW-RE9">
+                                <rect key="frame" x="108" y="411.66666666666669" width="177" height="29"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="h40-5I-kSt"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="45I-sW-RE9" firstAttribute="centerX" secondItem="ff8-oW-2bd" secondAttribute="centerX" id="0kT-Tl-sCi"/>
+                            <constraint firstItem="soo-B7-Xb3" firstAttribute="bottom" secondItem="h40-5I-kSt" secondAttribute="bottom" id="4p7-RX-t6u"/>
+                            <constraint firstItem="45I-sW-RE9" firstAttribute="centerY" secondItem="ff8-oW-2bd" secondAttribute="centerY" id="H7z-OB-iMI"/>
+                            <constraint firstItem="soo-B7-Xb3" firstAttribute="centerX" secondItem="ff8-oW-2bd" secondAttribute="centerX" id="pjs-QI-wQ2"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="welcomeMessageLabel" destination="45I-sW-RE9" id="3hd-9B-1o3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qZg-Dw-nXa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="810" y="4"/>
+        </scene>
     </scenes>
     <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemGray6Color">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

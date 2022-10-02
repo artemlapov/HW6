@@ -14,7 +14,16 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+    }
+
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        view.endEditing(true)
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let logInDoneVC = segue.destination as? LogInDoneViewController else { return }
+        logInDoneVC.userNameTextField = userNameTextField.text
     }
 
     @IBAction func forgotUserNameUIButtonTapped() {
@@ -25,11 +34,6 @@ class ViewController: UIViewController {
         showAlert(withTitle: "Your password is:", andMessage: "Password")
     }
 
-    // Метод для скрытия клавиатуры тапом по экрану
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        super.touchesBegan(touches, with: event)
-        view.endEditing(true)
-    }
 }
 
 extension ViewController {
@@ -37,7 +41,6 @@ extension ViewController {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let okAction = UIAlertAction(title: "Understood", style: .default) { _ in
             self.passwordTextField.text = ""
-            self.userNameTextField.text = ""
         }
         alert.addAction(okAction)
         present(alert, animated: true)
