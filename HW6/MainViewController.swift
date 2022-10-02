@@ -26,15 +26,21 @@ class MainViewController: UIViewController {
         logInDoneVC.userNameTextField = userNameTextField.text
     }
 
-    @IBAction func forgotUserNameUIButtonTapped() {
+    @IBAction func forgotUserNameUIButtonDidTapped() {
         showAlert(withTitle: "Your name is:", andMessage: "User")
     }
 
-    @IBAction func forgotPasswordButtonTapped() {
+    @IBAction func forgotPasswordButtonDidTapped() {
         showAlert(withTitle: "Your password is:", andMessage: "Password")
     }
 
-    @IBAction func logOutButtonDidTapped(for segue: UIStoryboardSegue) {
+    @IBAction func logInButtonDidTapped() {
+        if userNameTextField.text != "User" || passwordTextField.text != "Password" {
+            showAlert(withTitle: "⛔️", andMessage: "Invalid login or password")
+        }
+    }
+
+    @IBAction func unwind(for segue: UIStoryboardSegue) {
         dismiss(animated: true)
         self.userNameTextField.text = ""
         self.passwordTextField.text = ""

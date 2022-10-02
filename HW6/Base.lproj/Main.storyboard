@@ -36,6 +36,7 @@
                                             <fontDescription key="titleFontDescription" type="system" pointSize="27"/>
                                         </buttonConfiguration>
                                         <connections>
+                                            <action selector="logInButtonDidTapped" destination="BYZ-38-t0r" eventType="touchUpInside" id="2Tg-eD-duy"/>
                                             <segue destination="vuf-3l-KVz" kind="presentation" modalPresentationStyle="fullScreen" id="Oaf-fJ-hwp"/>
                                         </connections>
                                     </button>
@@ -56,7 +57,7 @@
                                                     </attributedString>
                                                 </buttonConfiguration>
                                                 <connections>
-                                                    <action selector="forgotUserNameUIButtonTapped" destination="BYZ-38-t0r" eventType="touchUpInside" id="nWC-zf-rGg"/>
+                                                    <action selector="forgotUserNameUIButtonDidTapped" destination="BYZ-38-t0r" eventType="touchUpInside" id="nWC-zf-rGg"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ghc-TF-8cc">
@@ -73,7 +74,7 @@
                                                     </attributedString>
                                                 </buttonConfiguration>
                                                 <connections>
-                                                    <action selector="forgotPasswordButtonTapped" destination="BYZ-38-t0r" eventType="touchUpInside" id="yDb-fa-LyM"/>
+                                                    <action selector="forgotPasswordButtonDidTapped" destination="BYZ-38-t0r" eventType="touchUpInside" id="yDb-fa-LyM"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -108,30 +109,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="soo-B7-Xb3">
-                                <rect key="frame" x="138" y="771" width="117.33333333333331" height="47"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="tinted" title="Log Out">
-                                    <fontDescription key="titleFontDescription" type="system" pointSize="27"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <segue destination="UMH-iY-FDM" kind="unwind" unwindAction="logOutButtonDidTappedFor:" id="bCQ-a4-lH8"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome, ___ 🥹" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="45I-sW-RE9">
                                 <rect key="frame" x="108" y="411.66666666666669" width="177" height="29"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="soo-B7-Xb3">
+                                <rect key="frame" x="16" y="746" width="361" height="47"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="Log Out" titleAlignment="center">
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="27"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <segue destination="UMH-iY-FDM" kind="unwind" unwindAction="unwindFor:" id="3tb-ZV-dl2"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="h40-5I-kSt"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="45I-sW-RE9" firstAttribute="centerX" secondItem="ff8-oW-2bd" secondAttribute="centerX" id="0kT-Tl-sCi"/>
-                            <constraint firstItem="soo-B7-Xb3" firstAttribute="bottom" secondItem="h40-5I-kSt" secondAttribute="bottom" id="4p7-RX-t6u"/>
                             <constraint firstItem="45I-sW-RE9" firstAttribute="centerY" secondItem="ff8-oW-2bd" secondAttribute="centerY" id="H7z-OB-iMI"/>
-                            <constraint firstItem="soo-B7-Xb3" firstAttribute="centerX" secondItem="ff8-oW-2bd" secondAttribute="centerX" id="pjs-QI-wQ2"/>
+                            <constraint firstItem="h40-5I-kSt" firstAttribute="bottom" secondItem="soo-B7-Xb3" secondAttribute="bottom" constant="25" id="g5C-j9-3qb"/>
+                            <constraint firstItem="soo-B7-Xb3" firstAttribute="leading" secondItem="h40-5I-kSt" secondAttribute="leading" constant="16" id="hrV-Xb-NcV"/>
+                            <constraint firstItem="h40-5I-kSt" firstAttribute="trailing" secondItem="soo-B7-Xb3" secondAttribute="trailing" constant="16" id="ney-R0-GuU"/>
                         </constraints>
                     </view>
                     <connections>
@@ -141,7 +143,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qZg-Dw-nXa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="UMH-iY-FDM" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="810" y="4"/>
+            <point key="canvasLocation" x="809.92366412213732" y="3.5211267605633805"/>
         </scene>
     </scenes>
     <resources>
