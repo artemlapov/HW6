@@ -12,29 +12,32 @@ class LoginViewController: UIViewController {
     @IBOutlet var userNameTextField: UITextField!
     @IBOutlet var passwordTextField: UITextField!
 
-    private let userArtem = User.getUser()
-
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
         view.endEditing(true)
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let logInDoneVC = segue.destination as? WelcomeViewController else { return }
-        logInDoneVC.userNameTextField = userNameTextField.text
-    }
+        guard let welcomeVC = segue.destination as? WelcomeViewController else { return }
+        welcomeVC.userNameTextField = "Test Text"
+//        logInDoneVC.userNameTextField = userID.login
+//        //logInDoneVC.userID = userID
+}
+
+
+
 
     @IBAction func forgotUserNameUIButtonDidTapped() {
-        showAlert(withTitle: "Your name is:", andMessage: "\(userArtem.login)")
+        showAlert(withTitle: "Your name is:", andMessage: "\(userID.login)")
     }
 
     @IBAction func forgotPasswordButtonDidTapped() {
-        showAlert(withTitle: "Your password is:", andMessage: "\(userArtem.password)")
+        showAlert(withTitle: "Your password is:", andMessage: "\(userID.password)")
     }
 
     @IBAction func logInButtonDidTapped() {
-        if userNameTextField.text != userArtem.login
-            || passwordTextField.text != userArtem.password {
+        if userNameTextField.text != userID.login
+            || passwordTextField.text != userID.password {
             showAlert(withTitle: "⛔️", andMessage: "Invalid login or password")
         }
     }

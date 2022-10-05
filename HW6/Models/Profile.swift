@@ -1,11 +1,12 @@
 //
-//  CV.swift
+//  Profile.swift
 //  HW6
 //
 //  Created by Artem Lapov on 05.10.2022.
 //
 
 struct Bio {
+    let photo: String
     let name: String
     let surname: String
     let age: Int
@@ -22,6 +23,7 @@ struct Bio {
     static func getBio(ofAccountID accountID: Int) -> Bio {
         if accountID == 12345 {
             return Bio(
+                photo: "🧕🏽",
                 name: "Artem",
                 surname: "LAPOV",
                 age: 34,
@@ -35,6 +37,7 @@ struct Bio {
             )
         } else {
             return Bio(
+                photo: "",
                 name: "",
                 surname: "",
                 age: 0,
@@ -61,3 +64,6 @@ enum Gender: String {
     case twoSpirit = "Two-spirit"
     case noneOfThese = "None of these"
 }
+
+let userID = User.getUser()
+let userProfile = Bio.getBio(ofAccountID: userID.accountID)

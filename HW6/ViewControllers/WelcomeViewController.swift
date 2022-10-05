@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class WelcomeViewController: UIViewController {
+class WelcomeViewController: UIViewController {
 
     @IBOutlet var welcomeMessageLabel: UILabel!
     @IBOutlet var logInDoneView: UIView!
@@ -32,7 +32,6 @@ final class WelcomeViewController: UIViewController {
         view.addVerticalGradientLayer(topColor: primaryColor, bottomColor: secondaryColor)
         welcomeMessageLabel.text = "Welcome, \(userNameTextField ?? "") 🥹"
     }
-
 
 }
 
