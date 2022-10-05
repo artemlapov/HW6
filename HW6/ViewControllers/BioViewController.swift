@@ -9,6 +9,12 @@ import UIKit
 
 class BioViewController: UIViewController {
 
+    @IBOutlet var titleOfBioLabel: UILabel!
+    @IBOutlet var photoLabel: UILabel!
+    @IBOutlet var ageLabel: UILabel!
+    @IBOutlet var genderLabel: UILabel!
+    @IBOutlet var professionLabel: UILabel!
+    @IBOutlet var citizenshipLabel: UILabel!
 
     private let primaryColor = UIColor(
         red: 107/255,
@@ -27,6 +33,12 @@ class BioViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addVerticalGradientLayer(topColor: primaryColor, bottomColor: secondaryColor)
+        titleOfBioLabel.text = "\(userProfile.name) \(userProfile.surname)"
+        photoLabel.text = userProfile.photo
+        ageLabel.text = "\(userProfile.age) years old"
+        genderLabel.text = "\(userProfile.gender.rawValue) person"
+        citizenshipLabel.text = "Citizenship: \(userProfile.citizenship)"
+        professionLabel.text = userProfile.profession
     }
 
 }

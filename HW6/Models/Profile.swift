@@ -23,7 +23,7 @@ struct Bio {
     static func getBio(ofAccountID accountID: Int) -> Bio {
         if accountID == 12345 {
             return Bio(
-                photo: "🧕🏽",
+                photo: "💂🏼‍♀️",
                 name: "Artem",
                 surname: "LAPOV",
                 age: 34,

@@ -9,6 +9,11 @@ import UIKit
 
 class ContactViewController: UIViewController {
 
+    @IBOutlet var titleOfContactLabel: UILabel!
+    @IBOutlet var emailLabel: UILabel!
+    @IBOutlet var phoneNumberLabel: UILabel!
+    @IBOutlet var instagramAccountLabel: UILabel!
+
     private let primaryColor = UIColor(
         red: 107/255,
         green: 148/255,
@@ -26,6 +31,10 @@ class ContactViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addVerticalGradientLayer(topColor: primaryColor, bottomColor: secondaryColor)
+        titleOfContactLabel.text = "\(userProfile.name) \(userProfile.surname)"
+        emailLabel.text = "Email: \(userProfile.email)"
+        phoneNumberLabel.text = "Tel.: \(userProfile.phoneNumber)"
+        instagramAccountLabel.text = "Instagram: \(userProfile.instagramAccount)"
     }
 
 }
