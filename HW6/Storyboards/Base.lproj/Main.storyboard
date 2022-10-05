@@ -37,7 +37,7 @@
                                         </buttonConfiguration>
                                         <connections>
                                             <action selector="logInButtonDidTapped" destination="BYZ-38-t0r" eventType="touchUpInside" id="2Tg-eD-duy"/>
-                                            <segue destination="vuf-3l-KVz" kind="presentation" modalPresentationStyle="fullScreen" id="Oaf-fJ-hwp"/>
+                                            <segue destination="qqf-Xk-zwj" kind="presentation" modalPresentationStyle="fullScreen" id="Oaf-fJ-hwp"/>
                                         </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="-20" translatesAutoresizingMaskIntoConstraints="NO" id="70h-cc-aTG">
@@ -122,6 +122,13 @@
                             <constraint firstItem="h40-5I-kSt" firstAttribute="trailing" secondItem="soo-B7-Xb3" secondAttribute="trailing" constant="16" id="ney-R0-GuU"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="dro-kG-yr1">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="person.circle" catalog="system" id="E1l-oW-UiR">
+                            <connections>
+                                <segue destination="zX8-Q2-kHL" kind="show" id="UzO-LI-38W"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="logInDoneView" destination="ff8-oW-2bd" id="IOD-qn-rUz"/>
                         <outlet property="welcomeMessageLabel" destination="45I-sW-RE9" id="3hd-9B-1o3"/>
@@ -130,10 +137,103 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qZg-Dw-nXa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="UMH-iY-FDM" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="809.92366412213732" y="3.5211267605633805"/>
+            <point key="canvasLocation" x="1566" y="3"/>
+        </scene>
+        <!--Bio-->
+        <scene sceneID="l0k-rR-NJp">
+            <objects>
+                <viewController id="fzG-cS-ABW" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="s9X-gC-jHf">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="8Ux-EL-gaR"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Bio" image="person.fill" catalog="system" id="gA2-qe-oD9"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bLR-wL-kp0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="844" y="763"/>
+        </scene>
+        <!--Experience-->
+        <scene sceneID="2pt-ym-Clq">
+            <objects>
+                <viewController id="s7m-Ry-oZk" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Uk1-fv-0Pr">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="Lb0-tM-bp2"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Experience" image="tray.full.fill" catalog="system" id="tiH-EJ-Wj2"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1AS-zv-RE6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1614" y="763"/>
+        </scene>
+        <!--Contact-->
+        <scene sceneID="dyt-Pd-dz4">
+            <objects>
+                <viewController id="dws-A6-ljF" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="HTc-eD-uZZ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="45w-vJ-JBM"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Contact" image="person.crop.square.filled.and.at.rectangle.fill" catalog="system" id="Ymp-fo-m6T"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LIW-Vz-wsF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2346" y="763"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="xWr-hN-WQI">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qqf-Xk-zwj" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="65b-Eu-aRt">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="vuf-3l-KVz" kind="relationship" relationship="rootViewController" id="KaN-lu-kXd"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="miT-U3-O2h" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="808.125" y="3.1690140845070425"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="RBR-Cz-Obb">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="zX8-Q2-kHL" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="igz-cN-Tgq"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="AaW-dn-ggz">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="fzG-cS-ABW" kind="relationship" relationship="viewControllers" id="T0z-dI-gDC"/>
+                        <segue destination="s7m-Ry-oZk" kind="relationship" relationship="viewControllers" id="0oR-iA-mZ3"/>
+                        <segue destination="dws-A6-ljF" kind="relationship" relationship="viewControllers" id="aDf-Jo-6xN"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9aB-MX-mlw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="69" y="763"/>
         </scene>
     </scenes>
     <resources>
+        <image name="person.circle" catalog="system" width="128" height="123"/>
+        <image name="person.crop.square.filled.and.at.rectangle.fill" catalog="system" width="128" height="93"/>
+        <image name="person.fill" catalog="system" width="128" height="120"/>
+        <image name="tray.full.fill" catalog="system" width="128" height="88"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemGray6Color">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

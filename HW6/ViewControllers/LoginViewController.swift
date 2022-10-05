@@ -12,8 +12,7 @@ class LoginViewController: UIViewController {
     @IBOutlet var userNameTextField: UITextField!
     @IBOutlet var passwordTextField: UITextField!
 
-    private let user = "User"
-    private let password = "Password"
+    private let userArtem = User.getUser()
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
@@ -26,15 +25,16 @@ class LoginViewController: UIViewController {
     }
 
     @IBAction func forgotUserNameUIButtonDidTapped() {
-        showAlert(withTitle: "Your name is:", andMessage: "\(user)")
+        showAlert(withTitle: "Your name is:", andMessage: "\(userArtem.login)")
     }
 
     @IBAction func forgotPasswordButtonDidTapped() {
-        showAlert(withTitle: "Your password is:", andMessage: "\(password)")
+        showAlert(withTitle: "Your password is:", andMessage: "\(userArtem.password)")
     }
 
     @IBAction func logInButtonDidTapped() {
-        if userNameTextField.text != user || passwordTextField.text != password {
+        if userNameTextField.text != userArtem.login
+            || passwordTextField.text != userArtem.password {
             showAlert(withTitle: "⛔️", andMessage: "Invalid login or password")
         }
     }
