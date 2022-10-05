@@ -7,14 +7,13 @@
 
 import UIKit
 
-class MainViewController: UIViewController {
+class LoginViewController: UIViewController {
 
     @IBOutlet var userNameTextField: UITextField!
     @IBOutlet var passwordTextField: UITextField!
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
+    private let user = "User"
+    private let password = "Password"
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
@@ -22,33 +21,32 @@ class MainViewController: UIViewController {
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let logInDoneVC = segue.destination as? LogInDoneViewController else { return }
+        guard let logInDoneVC = segue.destination as? WelcomeViewController else { return }
         logInDoneVC.userNameTextField = userNameTextField.text
     }
 
     @IBAction func forgotUserNameUIButtonDidTapped() {
-        showAlert(withTitle: "Your name is:", andMessage: "User")
+        showAlert(withTitle: "Your name is:", andMessage: "\(user)")
     }
 
     @IBAction func forgotPasswordButtonDidTapped() {
-        showAlert(withTitle: "Your password is:", andMessage: "Password")
+        showAlert(withTitle: "Your password is:", andMessage: "\(password)")
     }
 
     @IBAction func logInButtonDidTapped() {
-        if userNameTextField.text != "User" || passwordTextField.text != "Password" {
+        if userNameTextField.text != user || passwordTextField.text != password {
             showAlert(withTitle: "⛔️", andMessage: "Invalid login or password")
         }
     }
 
     @IBAction func unwind(for segue: UIStoryboardSegue) {
-        dismiss(animated: true)
-        self.userNameTextField.text = ""
-        self.passwordTextField.text = ""
+        userNameTextField.text = ""
+        passwordTextField.text = ""
     }
 
 }
 
-extension MainViewController {
+extension LoginViewController {
     private func showAlert(withTitle title: String, andMessage message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let okAction = UIAlertAction(title: "Understood", style: .default) { _ in
